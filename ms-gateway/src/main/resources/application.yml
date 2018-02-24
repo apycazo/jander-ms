@@ -1,0 +1,26 @@
+spring.application.name: gateway-svc
+server.port: 8090
+
+info:
+  app: ${spring.application.name}
+
+zuul:
+  routes:
+    quotes:
+      path: /quotes/**
+      serviceId: QUOTES-SVC
+      stripPrefix: false
+    derby:
+      path: /derby/**
+      serviceId: DERBY-SVC
+      stripPrefix: true
+
+eureka.instance:
+  preferIpAddress: true
+  statusPageUrlPath: ${management.contextPath:/}info
+  healthCheckUrlPath: ${management.contextPath:/}health
+  # To setup a custom id
+  # instanceId: ${spring.application.name}-${random.uuid}
+  # metadataMap.servicePath: ${nimbus.mapping:/data}
+  leaseRenewalIntervalInSeconds: 30
+  leaseExpirationDurationInSeconds: 30

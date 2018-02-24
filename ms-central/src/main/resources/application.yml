@@ -1,0 +1,22 @@
+
+server.port: 8761
+spring.profiles.active: native
+
+eureka:
+    environment: deployment
+    datacenter: local
+    server:
+        eviction-interval-timer-in-ms: 5000
+        # for single node only
+        enableSelfPreservation: false
+    client:
+        registerWithEureka: false
+        serviceUrl.defaultZone: http://${eureka.instance.hostname:localhost}:${server.port}/eureka/
+
+# Cloud config
+spring.cloud.config.server:
+  # Configures properties directory, by default it uses git, but can be classpath:.., file://...
+  git.uri: classpath:/config
+  # Avoids clashing with Eureka
+  prefix: cloud
+
