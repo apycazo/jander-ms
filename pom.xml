@@ -15,6 +15,7 @@
         <module>ms-quotes</module>
         <module>ms-derby</module>
         <module>ms-gateway</module>
+        <module>ms-vertx</module>
 
     </modules>
 
