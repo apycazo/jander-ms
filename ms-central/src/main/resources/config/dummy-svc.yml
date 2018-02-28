@@ -1,0 +1,3 @@
+dummy:
+  id: test-dummy-service
+  version: 1.0-default

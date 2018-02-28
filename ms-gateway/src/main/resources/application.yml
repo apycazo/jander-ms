@@ -6,6 +6,9 @@ info:
 
 zuul:
   routes:
+    httpbin:
+      path: /httpbin/**
+      url: https://httpbin.org/
     quotes:
       path: /quotes/**
       serviceId: QUOTES-SVC
@@ -13,6 +16,10 @@ zuul:
     derby:
       path: /derby/**
       serviceId: DERBY-SVC
+      stripPrefix: true
+    dummy:
+      path: /dummy/**
+      serviceId: DUMMY-SVC
       stripPrefix: true
 
 eureka.instance:

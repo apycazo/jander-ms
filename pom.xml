@@ -16,6 +16,7 @@
         <module>ms-derby</module>
         <module>ms-gateway</module>
         <module>ms-vertx</module>
+        <module>ms-dummy</module>
 
     </modules>
 
