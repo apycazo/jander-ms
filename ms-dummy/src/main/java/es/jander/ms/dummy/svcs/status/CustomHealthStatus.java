@@ -28,7 +28,6 @@ public class CustomHealthStatus implements HealthCheckHandler
                 log.info("Comparing status {} with forced value: {}", instanceStatus, currentStatus);
                 instanceStatus = currentStatus;
             }
-            log.info("Resulting status is {}", instanceStatus);
             return instanceStatus;
         } else if (currentStatus != null) {
             log.info("Returning existing current status: {}", currentStatus);
