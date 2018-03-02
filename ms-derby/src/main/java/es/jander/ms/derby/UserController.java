@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
@@ -15,6 +16,9 @@ public class UserController
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private JdbcUserService jdbcUserService;
 
     @PostConstruct
     private void init ()
@@ -43,5 +47,23 @@ public class UserController
     public Iterable<UserDomain> getUsers ()
     {
         return userRepository.findAll();
+    }
+
+    @GetMapping("users/100k")
+    public UserDomain getUser100k ()
+    {
+        return jdbcUserService.findUserWithId100k();
+    }
+
+    @GetMapping("users/100km")
+    public UserDomain getUser100kWithMapper ()
+    {
+        return jdbcUserService.findUserWithId100kUsingExternalMapper();
+    }
+
+    @PostMapping("/users")
+    public UserDomain saveJdbcUser()
+    {
+        return jdbcUserService.saveUser();
     }
 }
