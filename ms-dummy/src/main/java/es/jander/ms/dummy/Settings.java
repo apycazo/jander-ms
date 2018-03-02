@@ -20,6 +20,7 @@ public class Settings
     private String id;
     private int servicePort = 0;
     private String version = "default";
+    private boolean global = false;
 
     @Data
     public static class SettingsPoolConfig

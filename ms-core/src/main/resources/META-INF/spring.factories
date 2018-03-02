@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+es.jander.ms.core.base.MsCoreAutoConfig

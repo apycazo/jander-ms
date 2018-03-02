@@ -43,6 +43,13 @@
                 <artifactId>derby</artifactId>
                 <version>${apache-derby.version}</version>
             </dependency>
+
+            <!-- local modules -->
+            <dependency>
+                <groupId>es.jander</groupId>
+                <artifactId>ms-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

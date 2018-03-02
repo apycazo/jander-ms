@@ -17,6 +17,8 @@
         <module>ms-gateway</module>
         <module>ms-vertx</module>
         <module>ms-dummy</module>
+        <module>ms-core</module>
+        <module>ms-coretester</module>
 
     </modules>
 
