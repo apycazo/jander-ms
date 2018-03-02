@@ -1,0 +1,18 @@
+
+spring.application.name: redis-svc
+server.port: 8094
+
+info.app: ${spring.application.name}
+
+spring.redis.host: 127.0.0.1
+spring.redis.port: 6379
+
+eureka.instance:
+    preferIpAddress: true
+    statusPageUrlPath: ${management.contextPath:/}info
+    healthCheckUrlPath: ${management.contextPath:/}health
+    # To setup a custom id
+    # instanceId: ${spring.application.name}-${random.uuid}
+    # metadataMap.servicePath: ${nimbus.mapping:/data}
+    leaseRenewalIntervalInSeconds: 30
+    leaseExpirationDurationInSeconds: 30

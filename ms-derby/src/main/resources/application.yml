@@ -7,11 +7,21 @@ info:
 # Show or not log for each sql query
 spring.jpa:
   show-sql: true
-# Hibernate ddl auto (create, create-drop, update): with "create-drop" the database
-# schema will be automatically created afresh for every start of application
+  # Hibernate ddl auto (create, create-drop, update): with "create-drop" the database
+  # schema will be automatically created afresh for every start of application
   hibernate.ddl-auto: create-drop
-# Allows Hibernate to generate SQL optimized for a particular DBMS
+  # Allows Hibernate to generate SQL optimized for a particular DBMS
   properties.hibernate.dialect: org.hibernate.dialect.DerbyDialect
+
+# Use file persistence instead of in-memory (use ddl-auto: update)
+# spring.datasource.url: jdbc:derby:./database;create=true
+
+# For h2
+# spring.datasource.url: jdbc:h2:file:./h2db
+
+# Authorization config
+# spring.datasource.username: dbuser
+# spring.datasource.password: dbpass
 
 eureka.instance:
     preferIpAddress: true

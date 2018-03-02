@@ -19,6 +19,7 @@
         <module>ms-dummy</module>
         <module>ms-core</module>
         <module>ms-coretester</module>
+        <module>ms-redis</module>
 
     </modules>
 
